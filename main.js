@@ -30,7 +30,7 @@ discord.on('message', (msg) => {
       const count = question.match(matchingQuestion).length || 0;
 
       msg.channel.send(
-        `Hi, <@${msg.author.id}>! Since you're a noob. The answer is ${count} ${targetItem}`
+        `Psssst! The answer is **${count}**`
       );
     }
 
@@ -39,7 +39,7 @@ discord.on('message', (msg) => {
       const fish = chunks[1].match(':(.*):')[1];
 
       msg.channel.send(
-        `Hi, <@${msg.author.id}>! Since you're a noob. It looks like a **${fish.toUpperCase()}**`
+        `Psssst! It looks like a **${fish.toUpperCase()}**`
       );
 
     }
