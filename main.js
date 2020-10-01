@@ -18,9 +18,21 @@ discord.on('ready', () => {
 
 discord.on('message', (msg) => {
   try {
-    // if (msg.author.id !== 555955826880413696) {
-    //   return;
-    // }
+    if (msg.author.id !== 555955826880413696) {
+      return;
+    }
+
+    if (msg.content.includes('you are in the jail! type rpg jail')) {
+      const username = msg.content.split(',')[0];
+
+      msg.channel.
+
+      msg.channel.send(`
+Boss ${username},
+Ini barang boleh runding.
+You help me, I help you.
+`);
+    }
 
     if (msg.content.includes('is training in the forest!')) {
       const chunks = msg.content.split('\n');
@@ -44,8 +56,6 @@ discord.on('message', (msg) => {
 
     if (msg.content.includes('is training in the... casino')) {
       const chunks = msg.content.split('\n');
-
-      console.log(chunks[1])
 
       if (chunks[1].includes(':coin:')) {
         msg.channel.send(`Psssst! It's a **COIN**`);
