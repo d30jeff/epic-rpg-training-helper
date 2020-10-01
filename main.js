@@ -18,6 +18,10 @@ discord.on('ready', () => {
 
 discord.on('message', (msg) => {
   try {
+    // if (msg.author.id !== 555955826880413696) {
+    //   return;
+    // }
+
     if (msg.content.includes('is training in the forest!')) {
       const chunks = msg.content.split('\n');
 
@@ -41,6 +45,8 @@ discord.on('message', (msg) => {
     if (msg.content.includes('is training in the... casino')) {
       const chunks = msg.content.split('\n');
 
+      console.log(chunks[1])
+
       if (chunks[1].includes(':coin:')) {
         msg.channel.send(`Psssst! It's a **COIN**`);
       } else if (chunks[1].includes('💎')) {
@@ -53,6 +59,7 @@ discord.on('message', (msg) => {
         msg.channel.send(`Psssst! It's a **FOUR LEAF CLOVER**`);
       } else {
         msg.channel.send(`Even I, don't know what the **FUCK** is that.`);
+        msg.channel.send(`Debug: ${msg.content} ${chunks[1]}`)
       }
     }
   } catch (e) {
